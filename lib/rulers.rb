@@ -1,4 +1,3 @@
-require "rulers/array"
 require "rulers/version"
 require "rulers/routing"
 
