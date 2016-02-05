@@ -33,5 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", '~> 0'
   spec.add_development_dependency "rack-test", '~> 0'
   spec.add_development_dependency "test-unit", '~> 0'
-  spec.add_runtime_dependency "rack"
+  spec.add_runtime_dependency "rack", '~> 1.6','>= 1.6.4'
 end
