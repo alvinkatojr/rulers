@@ -28,10 +28,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rest-client", '~> 0'
-  spec.add_development_dependency "rspec", '~> 0'
-  spec.add_development_dependency "rack-test", '~> 0'
-  spec.add_development_dependency "test-unit", '~> 0'
+  spec.add_development_dependency "rake", "~> 10.4.2"
+  spec.add_development_dependency "rest-client", '~> 1.8.0'
+  spec.add_development_dependency "rspec", '~> 3.4.0'
+  spec.add_development_dependency "rack-test", '~> 0.6.3'
+  spec.add_development_dependency "test-unit", '3.1.7'
   spec.add_runtime_dependency "rack", '~> 1.6','>= 1.6.4'
 end
