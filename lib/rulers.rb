@@ -4,7 +4,9 @@ require "rulers/routing"
 module Rulers
   class Application
     def call(env)
-      if env['PATH_INFO'] == '/favicon.ico'
+      if env['PATH_INFO'] == '/favicon.ico' ||
+         env['PATH_INFO'] == '/apple-touch-icon-precomposed.png' ||
+         env['PATH_INFO'] == '/apple-touch-icon.png'
         return [404, {'Content-Type' => 'text/html'}, []]
       end
 
