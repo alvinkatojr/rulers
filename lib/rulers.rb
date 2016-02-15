@@ -10,6 +10,10 @@ module Rulers
         return [404, {'Content-Type' => 'text/html'}, []]
       end
 
+      if env['PATH_INFO'] == '/'
+        return [200, {'Content-Type' => 'text/html'}, [File.read "public/index.html"]]
+      end
+
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
       begin
