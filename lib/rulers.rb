@@ -14,6 +14,9 @@ module Rulers
         return [200, {'Content-Type' => 'text/html'}, [File.read "public/index.html"]]
         # Sets the home controller and index action
         # env={'PATH_INFO' => '/home/index.html'}
+
+        # Sets a redirect
+        # return [301, { 'Location' => '/home/index.html'}, []]
       end
 
       klass, act = get_controller_and_action(env)
