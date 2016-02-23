@@ -1,3 +1,5 @@
+require "erubis"
+
 class Controller
   def initialize(env)
     @env = env
