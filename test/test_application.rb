@@ -7,6 +7,9 @@ class TestController < Rulers::Controller
 end
 
 class TestApp < Rulers::Application
+  def get_controller_and_action(env)
+    [TestController, "index"]
+  end
 end
 
 class RulersAppTest < Test::Unit::TestCase
