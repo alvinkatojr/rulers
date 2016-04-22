@@ -40,5 +40,9 @@ module Rulers
     def user_agent
       @env[]
     end
+
+    def rulers_version
+      Rulers::VERSION
+    end
   end
 end
