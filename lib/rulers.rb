@@ -42,6 +42,10 @@ module Rulers
       @env[]
     end
 
+    def request_start_time
+      @start_time
+    end
+
     def rulers_version
       Rulers::VERSION
     end
