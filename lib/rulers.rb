@@ -36,5 +36,9 @@ module Rulers
     def controller_name
       self.class
     end
+
+    def user_agent
+      @env[]
+    end
   end
 end
