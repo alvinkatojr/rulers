@@ -32,5 +32,9 @@ module Rulers
 
       [200, {'Content-Type' => 'text/html'}, [text]]
     end
+
+    def controller_name
+      self.class
+    end
   end
 end
