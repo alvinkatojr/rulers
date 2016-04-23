@@ -28,4 +28,5 @@ class Controller
     klass = self.class
     klass = klass.to_s.gsub(/Controller$/, '')
     Rulers.to_underscor
+  end
 end
