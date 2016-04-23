@@ -9,6 +9,14 @@ class Controller
     @env
   end
 
+  def instance_vars
+    vars = {}
+    instance_variables.each do |name|
+      vars[name[1..-1]] = instance_variable_get name.to_sym
+    end
+    vars
+  end
+  
   def render(view_name, locals = {})
     filename = File.join "app", "views", controller_name, "#{view_name}.html.erb"
     template = File.read filename
