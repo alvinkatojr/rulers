@@ -1,4 +1,4 @@
-require "erubis"
+require 'erubis'
 
 class Controller
   def initialize(env)
@@ -18,7 +18,7 @@ class Controller
   end
 
   def render(view_name, locals = instance_vars)
-    filename = File.join "app", "views", controller_name, "#{view_name}.html.erb"
+    filename = File.join 'app', 'views', controller_name, '#{view_name}.html.erb'
     template = File.read filename
     eruby = Erubis::Eruby.new(template)
     eruby.result(locals.merge(:env => env))
