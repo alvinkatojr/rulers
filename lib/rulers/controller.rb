@@ -1,12 +1,10 @@
 require 'erubis'
 
 class Controller
+  attr_reader :env
+
   def initialize(env)
     @env = env
-  end
-
-  def env
-    @env
   end
 
   def instance_vars
