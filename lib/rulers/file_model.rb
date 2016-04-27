@@ -14,5 +14,9 @@ module Rulers
         @hash = MultiJson.load(obj)
       end
     end
+
+    def [](name)
+      @hash[name.to_s]
+    end
   end
 end
