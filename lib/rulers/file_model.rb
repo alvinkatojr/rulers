@@ -22,5 +22,13 @@ module Rulers
     def []=(name, value)
       @hash[name.to_s] = value
     end
+
+    def self.find(id)
+      begin
+        FileModel.new("db/quotes/#{id}.json")
+      rescue
+        return nil
+      end
+    end
   end
 end
