@@ -1,6 +1,6 @@
 class Object
   def self.const_missing(c)
-    @calling_const_missing = @calling_const_missing || {}
+    @calling_const_missing ||= {}
     return nil if @calling_const_missing[c]
 
     @calling_const_missing[c] = true
