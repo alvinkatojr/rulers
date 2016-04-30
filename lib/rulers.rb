@@ -1,7 +1,7 @@
 require "rulers/version"
 require "rulers/routing"
 require "rulers/util"
-require "rulers/depencies"
+require "rulers/dependencies"
 require "rulers/controller"
 require "rulers/file_model"
 
