@@ -13,21 +13,21 @@ module Rulers
         obj = File.read(filename)
         @hash = MultiJson.load(obj)
       end
-    end
 
-    def [](name)
-      @hash[name.to_s]
-    end
+      def [](name)
+        @hash[name.to_s]
+      end
 
-    def []=(name, value)
-      @hash[name.to_s] = value
-    end
+      def []=(name, value)
+        @hash[name.to_s] = value
+      end
 
-    def self.find(id)
-      begin
-        FileModel.new("db/quotes/#{id}.json")
-      rescue
-        return nil
+      def self.find(id)
+        begin
+          FileModel.new("db/quotes/#{id}.json")
+        rescue
+          return nil
+        end
       end
     end
   end
