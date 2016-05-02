@@ -1,3 +1,4 @@
+require 'rulers/file_model'
 require 'erubis'
 
 module Rulers
