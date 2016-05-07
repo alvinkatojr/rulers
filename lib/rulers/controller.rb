@@ -28,7 +28,7 @@ module Rulers
     def controller_name
       klass = self.class
       klass = klass.to_s.gsub(/Controller$/, '')
-      Rulers.to_underscor
+      Rulers.to_underscore
     end
   end
 end
