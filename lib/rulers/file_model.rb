@@ -34,6 +34,13 @@ module Rulers
         files = Dir['db/quotes/*.json']
         files.map { |f| FileModel.new f }
       end
+
+      def self.create(attrs)
+        hash = {}
+        hash['submitter'] = attrs['submitter'] || ''
+        hash['quote'] = attrs['attribution'] || ''
+        hash['attribution'] = attrs['attribution'] || ''
+      end
     end
   end
 end
