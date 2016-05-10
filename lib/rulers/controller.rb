@@ -30,5 +30,9 @@ module Rulers
       klass = klass.to_s.gsub(/Controller$/, '')
       Rulers.to_underscore klass
     end
+
+    def user_agent
+      @env[]
+    end
   end
 end
