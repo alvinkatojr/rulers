@@ -34,21 +34,5 @@ module Rulers
 
       [200, { 'Content-Type' => 'text/html' }, [text]]
     end
-
-    def controller_name
-      self.class
-    end
-
-    def user_agent
-      @env[]
-    end
-
-    def request_start_time
-      @start_time
-    end
-
-    def rulers_version
-      Rulers::VERSION
-    end
   end
 end
