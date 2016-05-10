@@ -34,5 +34,9 @@ module Rulers
     def user_agent
       @env[]
     end
+
+    def request_start_time
+      @start_time
+    end
   end
 end
