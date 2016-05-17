@@ -56,7 +56,7 @@ module Rulers
           TEMPLATE
         end
 
-
+        FileModel.new "db/quotes/#{id}.json"
         end
       end
     end
