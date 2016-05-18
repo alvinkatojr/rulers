@@ -43,7 +43,7 @@ module Rulers
 
         files = Dir['db/quotes/*.json']
         names = files.map { |f| f.split('/')[-1] }
-        highest = names.map { |b| b.to_i }.max
+        highest = names.map(&:to_i).max
         id = highest + 1
 
         File.open("db/quotes/#{id}.json", 'w') do |f|
