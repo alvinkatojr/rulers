@@ -38,7 +38,7 @@ module Rulers
       def self.create(attrs)
         hash = {}
         hash['submitter'] = attrs['submitter'] || ''
-        hash['quote'] = attrs['attribution'] || ''
+        hash['quote'] = attrs['quote'] || ''
         hash['attribution'] = attrs['attribution'] || ''
 
         files = Dir['db/quotes/*.json']
