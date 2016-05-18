@@ -6,7 +6,7 @@ module Rulers
       def initialize(filename)
         @filename = filename
 
-        # if filename is 'dir/7.json, @id is 7'
+        # if filename is "dir/7.json, @id is 7"
         basename = File.split(filename)[-1]
         @id = File.basename(basename, '.json').to_i
 
@@ -37,9 +37,9 @@ module Rulers
 
       def self.create(attrs)
         hash = {}
-        hash['submitter'] = attrs['submitter'] || ''
-        hash['quote'] = attrs['quote'] || ''
-        hash['attribution'] = attrs['attribution'] || ''
+        hash["submitter"] = attrs["submitter"] || ""
+        hash["quote"] = attrs["quote"] || ""
+        hash["attribution"] = attrs["attribution"] || ""
 
         files = Dir['db/quotes/*.json']
         names = files.map { |f| f.split('/')[-1] }
@@ -49,9 +49,9 @@ module Rulers
         File.open("db/quotes/#{id}.json", 'w') do |f|
           f.write <<-TEMPLATE
           {
-            'submitter': "#{hash['submitter']}",
-            'quote': "#{hash['quote']}",
-            'attribution': "#{hash['attribution']}"
+            "submitter": "#{hash["submitter"]}",
+            "quote": "#{hash["quote"]}",
+            "attribution": "#{hash["attribution"]}"
           }
           TEMPLATE
         end
@@ -63,9 +63,9 @@ module Rulers
         File.open(@filename, 'w') do |f|
           f.write <<-TEMPLATE
             {
-              'submitter': "#{@hash['submitter']}",
-              'quote': "#{@hash['quote']}",
-              'attribution': "#{@hash['attribution']}"
+              "submitter": "#{@hash["submitter"]}",
+              "quote": "#{@hash["quote"]}",
+              "attribution": "#{@hash["attribution"]}"
             }
           TEMPLATE
         end
