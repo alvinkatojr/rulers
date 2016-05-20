@@ -47,7 +47,7 @@ module Rulers
         id = highest + 1
 
         File.open("db/quotes/#{id}.json", 'w') do |f|
-          f.write <<-TEMPLATE
+          f.write <<~TEMPLATE
           {
             "submitter": "#{hash["submitter"]}",
             "quote": "#{hash["quote"]}",
@@ -61,7 +61,7 @@ module Rulers
 
       def save
         File.open(@filename, 'w') do |f|
-          f.write <<-TEMPLATE
+          f.write <<~TEMPLATE
             {
               "submitter": "#{@hash["submitter"]}",
               "quote": "#{@hash["quote"]}",
