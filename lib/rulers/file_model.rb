@@ -66,6 +66,18 @@ module Rulers
         FileModel.new "db/quotes/#{id}.json"
       end
 
+      def self.find_all_by_attrib(attrib, value)
+        id = 1
+        results = []
+        loop do
+          m = FileModel.find(id)
+          return results unless m
+
+          results.push(m) if m[attrib] == value
+          id += 1
+        end
+      end
+
       def save
         File.open(@filename, 'w') do |f|
           f.write <<~TEMPLATE
