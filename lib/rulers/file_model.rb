@@ -23,8 +23,15 @@ module Rulers
       end
 
       def self.find(id)
+        id = id.to_i
+        @dm_style_cache || {}
         begin
-          FileModel.new("db/quotes/#{id}.json")
+          if @dm_style_cache[id]
+            return @dm_style_cache[id]
+          end
+          m = FileModel.new("db/quotes/#{id}.json")
+          @dm_style_cache = m
+          m
         rescue
           return nil
         end
