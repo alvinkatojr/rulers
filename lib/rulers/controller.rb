@@ -22,7 +22,7 @@ module Rulers
     def instance_vars
       vars = {}
       instance_variables.each do |name|
-        vars[name[1..-1]] = instance_variable_get name.to_sym
+        vars[name[1..-1]] = instance_variable_get(name.to_sym)
       end
       vars
     end
@@ -37,7 +37,7 @@ module Rulers
     def controller_name
       klass = self.class
       klass = klass.to_s.gsub(/Controller$/, '')
-      Rulers.to_underscore klass
+      Rulers.to_underscore(klass)
     end
 
     def user_agent
