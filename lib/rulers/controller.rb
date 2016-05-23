@@ -15,6 +15,10 @@ module Rulers
       @request ||= Rack::Request.new(@env)
     end
 
+    def params
+      request.params
+    end
+
     def instance_vars
       vars = {}
       instance_variables.each do |name|
