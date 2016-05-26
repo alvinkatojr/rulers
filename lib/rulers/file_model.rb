@@ -24,7 +24,7 @@ module Rulers
 
       def self.find(id)
         id = id.to_i
-        @dm_style_cache || {}
+        @dm_style_cache ||= {}
         begin
           if @dm_style_cache[id]
             return @dm_style_cache[id]
