@@ -25,6 +25,10 @@ module Rulers
       @response = Rack::Response.new(a, status, headers)
     end
 
+    def get_response # Only for Rulers
+      @response
+    end
+
     def instance_vars
       vars = {}
       instance_variables.each do |name|
