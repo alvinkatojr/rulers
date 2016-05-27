@@ -29,6 +29,10 @@ module Rulers
       @response
     end
 
+    def render_response(*args)
+      response(render(*args))
+    end
+
     def instance_vars
       vars = {}
       instance_variables.each do |name|
