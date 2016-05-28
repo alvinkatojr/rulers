@@ -26,13 +26,18 @@ module Rulers
 
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
-      # begin
       text = controller.send(act)
+      r = controller.get_response
+      if r
+        [r.status, r.headers, [r.body].flatten]
+      else
+        [200, { 'Content-Type' => 'text/html' }, [text]]
+      end
+      # How to catch exceptions
+      # begin
       # rescue Exception
         # return [500, { 'Content-Type' => 'text/html' }, ['You goofed up!']]
       # end
-
-      [200, { 'Content-Type' => 'text/html' }, [text]]
     end
   end
 end
