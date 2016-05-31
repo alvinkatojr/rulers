@@ -12,5 +12,9 @@ module Rulers
       # if any
       eval eruby.src
     end
+
+    def h(str)
+      URI.escape(str)
+    end
   end
 end
