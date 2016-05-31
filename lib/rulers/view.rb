@@ -5,5 +5,12 @@ module Rulers
         instance_variable_set(name, value)
       end
     end
+
+    def evaluate(template)
+      eruby = Erubis::Eruby.new(template)
+      # Locals are in addition to instance variables
+      # if any
+      eval eruby.src
+    end
   end
 end
