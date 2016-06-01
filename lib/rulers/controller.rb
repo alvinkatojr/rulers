@@ -41,6 +41,14 @@ module Rulers
       vars
     end
 
+    def instance_hash
+      h = {}
+      instance_variables.each do |i|
+        h[i] = instance_variable_get(i)
+      end
+      h
+    end
+
     def render(view_name, locals = instance_vars)
       filename = File.join 'app', 'views', controller_name, "#{view_name}.html.erb"
       template = File.read filename
