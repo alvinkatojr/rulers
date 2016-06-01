@@ -49,6 +49,15 @@ module Rulers
       h
     end
 
+    # Alternative render that uses view object
+    def render(view_name, locals={})
+      filename = File.join 'app', 'views', controller_name, "#{view_name}.html.erb"
+      template = File.read filename
+      v = View.new
+      v.set_vars(instance_hash)
+      v.evaluate(template)
+    end
+
     def render(view_name, locals = instance_vars)
       filename = File.join 'app', 'views', controller_name, "#{view_name}.html.erb"
       template = File.read filename
