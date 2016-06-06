@@ -22,6 +22,17 @@ module Rulers
         end
         @schema
       end
+
+      def self.to_sql(val)
+        case val
+        when Numeric
+          val.to_s
+        when String
+          "'#{val}'"
+        else
+          raise "Can't change #{val} to SQL!"
+        end
+      end
     end
   end
 end
