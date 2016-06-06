@@ -6,6 +6,10 @@ DB = SQLite3::Database.new 'test.db'
 module Rulers
   module Model
     class SQLite
+      def initialize(data = nil)
+        @hash = data
+      end
+
       def self.table
         Rulers.to_underscore(name)
       end
