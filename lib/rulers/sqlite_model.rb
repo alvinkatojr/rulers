@@ -33,6 +33,23 @@ module Rulers
           raise "Can't change #{val} to SQL!"
         end
       end
+
+      def self.create
+        values.delete "id"
+        keys = schema.keys - ["id"]
+        vals = keys.map do |key|
+          if values[key]
+            to_sql(values[key])
+          else
+            "null"
+          end
+        end
+
+        DB.execute<<~SQL
+        INSERT INTO #{table} (#{keys.join ","})
+        SQL
+
+      end
     end
   end
 end
