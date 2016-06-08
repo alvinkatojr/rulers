@@ -50,6 +50,12 @@ module Rulers
         SQL
 
       end
+
+      def self.count
+        DB.execute(<<~SQL)[0][0]
+        SELECT COUNT(*) FROM #{table}
+        SQL 
+      end
     end
   end
 end
