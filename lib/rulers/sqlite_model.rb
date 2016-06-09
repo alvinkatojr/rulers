@@ -49,12 +49,17 @@ module Rulers
         INSERT INTO #{table} (#{keys.join ","})
         SQL
 
+        raw_vals = keys.map { |k| values[k] }
+        data = Hash[keys.zip raw_vals]
+        sql = "SELECT last_insert_rowid();"
+        data['id'] = DB.execute(sql)[0][0]
+        self.new(data)
       end
 
       def self.count
         DB.execute(<<~SQL)[0][0]
         SELECT COUNT(*) FROM #{table}
-        SQL 
+        SQL
       end
     end
   end
