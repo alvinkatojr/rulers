@@ -46,7 +46,7 @@ module Rulers
         end
 
         DB.execute<<~SQL
-        INSERT INTO #{table} (#{keys.join ","})
+        INSERT INTO #{table} (#{keys.join(",")})
         VALUES (#{vals.join(",")})
         SQL
 
