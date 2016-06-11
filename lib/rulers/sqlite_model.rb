@@ -51,7 +51,7 @@ module Rulers
         SQL
 
         raw_vals = keys.map { |k| values[k] }
-        data = Hash[keys.zip raw_vals]
+        data = Hash[keys.zip(raw_vals)]
         sql = "SELECT last_insert_rowid();"
         data['id'] = DB.execute(sql)[0][0]
         self.new(data)
