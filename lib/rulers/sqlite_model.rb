@@ -35,7 +35,7 @@ module Rulers
       end
 
       def self.create(values)
-        values.delete "id"
+        values.delete("id")
         keys = schema.keys - ["id"]
         vals = keys.map do |key|
           if values[key]
