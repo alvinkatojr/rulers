@@ -47,6 +47,7 @@ module Rulers
 
         DB.execute<<~SQL
         INSERT INTO #{table} (#{keys.join ","})
+        VALUES (#{vals.join(",")})
         SQL
 
         raw_vals = keys.map { |k| values[k] }
