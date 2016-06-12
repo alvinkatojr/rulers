@@ -72,6 +72,14 @@ module Rulers
         data = Hash[schema.keys.zip(row[0])]
         self.new(data)
       end
+
+      def [](name)
+        @hash[name.to_s]
+      end
+
+      def []=(name, value)
+        @hash[name.to_s] = value
+      end
     end
   end
 end
