@@ -63,7 +63,7 @@ module Rulers
       end
 
       def self.find(id)
-        row = DB.execute <<~SQL
+        row = DB.execute(<<~SQL)
         select #{schema.keys.join(",")} from #{table}
         where id=#{id}
         SQL
