@@ -72,6 +72,13 @@ module Rulers
         self.new(data)
       end
 
+      def save!
+        unless @hash["id"]
+          self.class.create
+          return true
+        end
+      end
+
       def [](name)
         @hash[name.to_s]
       end
