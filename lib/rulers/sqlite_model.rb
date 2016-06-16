@@ -88,7 +88,11 @@ module Rulers
         WHERE id=#{@hash["id"]}
         SQL
 
-        true 
+        true
+      end
+
+      def save
+        self.save! rescue false
       end
 
       def [](name)
