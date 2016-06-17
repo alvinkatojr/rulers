@@ -5,7 +5,7 @@ DB = SQLite3::Database.new('test.db')
 
 module Rulers
   module Model
-    class SQLite
+    class SQLiteModel
       def initialize(data = nil)
         @hash = data
       end
