@@ -83,7 +83,7 @@ module Rulers
         self.new(data)
       end
 
-      def self.save!
+      def save!
         unless @hash["id"]
           self.class.create
           return true
