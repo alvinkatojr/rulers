@@ -113,6 +113,9 @@ module Rulers
       # def []=(name, value)
       #   @hash[name.to_s] = value
       # end
+
+      def method_missing(name, *args)
+      end
     end
   end
 end
