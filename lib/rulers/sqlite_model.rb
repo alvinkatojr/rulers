@@ -125,6 +125,8 @@ module Rulers
           end
           return self.send(name, args[0])
         end
+
+        super
       end
     end
   end
