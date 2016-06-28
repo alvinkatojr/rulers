@@ -106,14 +106,6 @@ module Rulers
         self.save! rescue false
       end
 
-      # def [](name)
-      #   @hash[name.to_s]
-      # end
-      #
-      # def []=(name, value)
-      #   @hash[name.to_s] = value
-      # end
-
       def method_missing(name, *args)
       end
     end
