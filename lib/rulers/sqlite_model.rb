@@ -115,6 +115,16 @@ module Rulers
           end
           return self.send(name)
         end
+
+        if name.to_s[-1..-1] == "="
+          col_name = name.to_s[0..-2]
+          self.class.class_eval do
+            define_method(name) do |value|
+              self[col_name] = value
+            end
+          end
+          return self.send(name, args[0])
+        end
       end
     end
   end
