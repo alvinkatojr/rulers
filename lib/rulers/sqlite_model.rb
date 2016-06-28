@@ -107,6 +107,14 @@ module Rulers
       end
 
       def method_missing(name, *args)
+        if @hash[name.to_s]
+          self.class.class_eval do
+            define_method(name) do
+              self[name]
+            end
+          end
+          return self.send(name)
+        end
       end
     end
   end
