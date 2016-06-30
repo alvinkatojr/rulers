@@ -46,6 +46,8 @@ module Rulers
       end
 
       def self.json_field(*fields)
+        @json_fields ||= []
+        @json_fields.concat(fields.map(&:to_s))
       end
 
       def self.create(values)
