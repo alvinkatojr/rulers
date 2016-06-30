@@ -45,6 +45,9 @@ module Rulers
         end
       end
 
+      def self.json_field(*fields)
+      end
+
       def self.create(values)
         values.delete("id")
         keys = schema.keys - ["id"]
