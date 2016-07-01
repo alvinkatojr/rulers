@@ -34,7 +34,11 @@ module Rulers
         end
       end
 
-      def self.to_sql(val)
+      def self.to_sql(key, val)
+        if @json_fields.include?(key.to_s)
+          return "'#{MultiJson.dump(val)}'"
+        end
+        
         case val
         when Numeric
           val.to_s
