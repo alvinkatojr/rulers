@@ -38,7 +38,7 @@ module Rulers
         if @json_fields.include?(key.to_s)
           return "'#{MultiJson.dump(val)}'"
         end
-        
+
         case val
         when Numeric
           val.to_s
@@ -47,6 +47,13 @@ module Rulers
         else
           raise "Can't change #{val} to SQL!"
         end
+      end
+
+      def self.from_sql(key, val)
+        if @json_fields.include?(key.to_s)
+          return MultiJson.load(val)
+        end
+        val
       end
 
       def self.json_field(*fields)
