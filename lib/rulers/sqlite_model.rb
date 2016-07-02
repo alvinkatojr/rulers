@@ -96,6 +96,9 @@ module Rulers
         SQL
 
         data = Hash[schema.keys.zip(row[0])]
+        data.each do |k, v|
+          data[k] = from_sql(k, v)
+        end
         self.new(data)
       end
 
